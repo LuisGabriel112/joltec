@@ -1,24 +1,28 @@
-# build output
+# --- Dependencias (Lo más importante) ---
+node_modules/
+.pnp
+.pnp.js
+
+# --- Astro ---
 dist/
-# generated types
 .astro/
 
-# dependencies
-node_modules/
+# --- Variables de Entorno (SEGURIDAD) ---
+.env
+.env.local
+.env.*
+!.env.example
 
-# logs
+# --- Logs y Diagnósticos ---
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# --- Editor (VS Code) ---
+.vscode/
 
-# environment variables
-.env
-.env.production
 
-# macOS-specific files
+# --- Sistema Operativo (Basura de OS) ---
 .DS_Store
-
-# jetbrains setting folder
-.idea/
+Thumbs.db
