@@ -1,6 +1,9 @@
 ---
 const { title } = Astro.props;
-import "../styles/global.css"; // Asegúrate de importar tus estilos aquí si no lo has hecho
+import "@fontsource/inter";
+import "material-symbols/outlined.css";
+import "../styles/global.css";
+import AOSInitializer from "../components/react/AOSInitializer.jsx";
 ---
 
 <!doctype html>
@@ -13,6 +16,10 @@ import "../styles/global.css"; // Asegúrate de importar tus estilos aquí si no
     <title>{title}</title>
   </head>
   <body class="bg-[#000000]">
-    <slot />
+    <AOSInitializer client:load>
+      <slot />
+
+      );
+    </AOSInitializer>
   </body>
 </html>

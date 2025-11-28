@@ -1,74 +1,15 @@
 ---
-import heroflames from "../../assets/images/heroflames.png";
+import FondoFuego from "../react/FondoFuego";
+import BotonHablemos from "../react/BotonHablemos";
+import CartasServicios from "../react/CartasServicios";
+import TituloAnimado from "../react/TituloAnimado";
 ---
 
 <div
-  class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black flex-col"
+  class="relative w-full h-screen flex items-center justify-center overflow-hidden flex-col"
 >
-  <h1
-    class="z-20 text-[7rem] font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent text-center"
-  >
-    JOLTEC
-  </h1>
-  <p class="z-10 text-xl font-normal text-white text-center">
-    Software inteligente para un futuro brillante
-  </p>
-  <button
-    class="z-20 text-xl font-normal text-white text-center mt-10 bg-gradient-to-r from-red-500 to-orange-500 px-7 py-2 rounded-full"
-    >Hablemos</button
-  >
-  <div
-    class="flex items-center justify-center mb-50 mt-10 grid grid-cols-2 grid-rows-2 gap-4"
-  >
-    <div
-      class="h-20 w-30 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 border border-gray-100
- z-21"
-    >
-    </div>
-    <div
-      class="h-20 w-30 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 border border-gray-100
- z-21 col-start-1 row-start-2"
-    >
-    </div>
-    <div
-      class="h-20 w-30 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 border border-gray-100
- z-21 col-start-2 row-start-1"
-    >
-    </div>
-    <div
-      class="h-20 w-30 bg-gray-600 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 border border-gray-100
- z-21"
-    >
-    </div>
-  </div>
-
-  <div class="absolute z-10 w-[1000px] h-[800px] levitating-wrapper">
-    <img
-      src={heroflames.src}
-      alt="Hero glow 1"
-      class="w-100 absolute top-0 left-0 opacity-80 mix-blend-screen"
-    />
-
-    <img
-      src={heroflames.src}
-      alt="Hero glow 2"
-      class="w-100 absolute bottom-0 right-0 rotate-180 opacity-80 mix-blend-screen"
-    />
-  </div>
+  <FondoFuego client:only="react" />
+  <TituloAnimado client:load />
+  <BotonHablemos client:load />
+  <CartasServicios client:load />
 </div>
-
-<style>
-  @keyframes levitate {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-25px);
-    }
-  }
-
-  .levitating-wrapper {
-    animation: levitate 6s ease-in-out infinite;
-  }
-</style>
