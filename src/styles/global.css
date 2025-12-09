@@ -1,1 +1,16 @@
 @import "tailwindcss";
+@theme {
+  --font-sans: "Inter", "sans-serif";
+}
+@layer utilities {
+  .glow-fuego {
+    /* Usamos drop-shadow porque funciona perfecto con texto gradiente */
+    filter: drop-shadow(0 0 10px rgba(255, 69, 0, 0.6))
+      drop-shadow(0 0 20px rgba(255, 0, 0, 0.4));
+  }
+
+  .glow-blanco {
+    /* Un brillo suave para el texto blanco normal */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+}

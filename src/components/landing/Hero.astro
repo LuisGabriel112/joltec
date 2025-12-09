@@ -1,0 +1,15 @@
+---
+import FondoFuego from "../react/FondoFuego";
+import BotonHablemos from "../react/BotonHablemos";
+import CartasServicios from "../react/CartasServicios";
+import TituloAnimado from "../react/TituloAnimado";
+---
+
+<div
+  class="relative w-full h-screen flex items-center justify-center overflow-hidden flex-col"
+>
+  <FondoFuego client:only="react" />
+  <TituloAnimado client:load />
+  <BotonHablemos client:load />
+  <CartasServicios client:load />
+</div>
