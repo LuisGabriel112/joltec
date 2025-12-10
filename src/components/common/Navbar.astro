@@ -1,3 +1,85 @@
-<nav class="absolute top-0 w-full z-50 p-4">
-  <h1 class="text-3xl font-bold text-white">Hola</h1>
+---
+import LogoJoltec from "../../images/logoJoltec.png";
+
+const links = [
+  { name: "Inicio", href: "#" },
+  { name: "Sobre nosotros", href: "#" },
+  { name: "Productos", href: "#" },
+  { name: "Contacto", href: "#" },
+];
+---
+
+<nav
+  data-aos="fade-down"
+  class="fixed top-4 w-[90%] max-w-6xl left-1/2 -translate-x-1/2 z-50 py-2 px-4 bg-gray-400/10 rounded-xl backdrop-blur-sm flex items-center justify-between"
+>
+  <a href="#">
+    <img src={LogoJoltec.src} alt="Logo Joltec" class="w-12 h-12" />
+  </a>
+
+  <!-- Desktop Menu -->
+  <ul class="hidden md:flex items-center justify-center space-x-8 text-white">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="hover:bg-linear-to-r from-red-500 to-orange-500 hover:bg-clip-text hover:text-transparent hover:glow-fuego transition duration-300 font-medium"
+          >
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <!-- Mobile Menu Button -->
+  <button id="menu-btn" class="md:hidden text-white focus:outline-none z-50">
+    <span class="material-symbols-outlined text-4xl">menu</span>
+  </button>
+
+  <!-- Mobile Menu Dropdown -->
+  <div
+    id="mobile-menu"
+    class="mt-33 fixed inset-0 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 md:hidden z-40"
+  >
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class="text-2xl text-white hover:bg-linear-to-r from-red-500 to-orange-500 hover:bg-clip-text hover:text-transparent hover:glow-fuego transition duration-300 font-bold"
+        >
+          {link.name}
+        </a>
+      ))
+    }
+  </div>
 </nav>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const icon = menuBtn?.querySelector("span");
+
+  menuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("translate-x-full");
+
+    if (mobileMenu?.classList.contains("translate-x-full")) {
+      icon!.textContent = "menu";
+      document.body.style.overflow = "auto";
+    } else {
+      icon!.textContent = "close";
+      document.body.style.overflow = "hidden";
+    }
+  });
+
+  // Close menu when clicking a link
+  const mobileLinks = mobileMenu?.querySelectorAll("a");
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("translate-x-full");
+      icon!.textContent = "menu";
+      document.body.style.overflow = "auto";
+    });
+  });
+</script>

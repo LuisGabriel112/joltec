@@ -1,12 +1,56 @@
 ---
-
+import "animate.css";
+const servicios = [
+  {
+    name: "Desarrollo Web",
+    description:
+      "Desarrollo de aplicaciones web modernas y escalables con las últimas tecnologías.",
+    icon: "code",
+  },
+  {
+    name: "Desarrollo de Software",
+    description:
+      "Transformamos tus ideas en software inteligente que se ajusta a tus necesidades.",
+    icon: "deployed_code",
+  },
+  {
+    name: "Diseño UX/UI",
+    description:
+      "Diseñamos experiencias digitales atractivas, intuitivas y centradas en el usuario.",
+    icon: "design_services",
+  },
+];
 ---
 
-<div class="h-360" data-aos="fade-up" data-aos-delay="200">
+<div class="min-h-screen py-20 flex flex-col justify-center" data-aos="fade-up" data-aos-delay="200">
   <h1
     class="flex flex-wrap justify-center overflow-hidden font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent text-center glow-fuego
-        text-5xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-tight"
+        text-5xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-tight mb-4"
   >
     NUESTROS SERVICIOS
   </h1>
+  <p
+    class="text-center font-extralight text-gray-300 text-lg sm:text-xl md:text-xl lg:text-xl mb-16"
+  >
+    Soluciones tecnológicas innovadoras que impulsan el crecimiento de tu
+    negocio
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto w-full">
+    {
+      servicios.map((servicio) => (
+        <div class="bg-[#1a1a1a] p-8 rounded-3xl hover:bg-[#252525] transition-colors duration-300 group">
+          <span class="material-symbols-outlined text-6xl text-orange-500 mb-6 group-hover:scale-110 transition-transform duration-300 block">
+            {servicio.icon}
+          </span>
+          <h3 class="text-3xl font-bold text-white mb-4 text-left">
+            {servicio.name}
+          </h3>
+          <p class="text-left text-gray-400 text-lg leading-relaxed">
+            {servicio.description}
+          </p>
+        </div>
+      ))
+    }
+  </div>
 </div>
