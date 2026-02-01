@@ -5,6 +5,7 @@ import "material-symbols/outlined.css";
 import "../styles/global.css";
 import AOSInitializer from "../components/react/AOSInitializer.jsx";
 import Navbar from "../components/common/Navbar.astro";
+import Footer from "../components/common/Footer.astro";
 import LogoJoltec from "../images/logoJoltec.png";
 import "animate.css";
 ---
@@ -20,9 +21,8 @@ import "animate.css";
   </head>
   <body class="bg-[#000000]">
     <Navbar />
-    <AOSInitializer client:load>
-      <slot />
-      );
-    </AOSInitializer>
+    <AOSInitializer client:load />
+    <slot />
+    <Footer />
   </body>
 </html>

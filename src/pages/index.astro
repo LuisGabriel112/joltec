@@ -14,12 +14,48 @@ import FormularioContacto from "../components/react/Formcont.jsx";
 ---
 
 <LayoutPrincipal title="Joltec | Soluciones Tecnológicas">
-  <main class="relative min-h-screen">
+  <main class="relative min-h-screen bg-black">
     <div class="relative z-10">
       <Hero />
     </div>
+
     <section id="servicios" class="relative z-10">
       <Servicios />
+    </section>
+
+    <!-- Sección Quiénes Somos -->
+    <section id="nosotros" class="relative z-10 bg-black/50 backdrop-blur-sm">
+      <Nosotros />
+    </section>
+
+    <!-- Sección Cotización y Contacto -->
+    <section id="contacto" class="relative z-10 py-20 bg-[#0a0a0a]">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-white mb-2">
+          COTIZA CON NOSOTROS TU PROYECTO
+        </h2>
+        <p class="text-gray-400 text-sm mb-12">
+          Impulsa tu visión: calcula tu inversión tecnológica y contáctanos para
+          hacerla realidad.
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Columna Izquierda: Calculadora -->
+          <div>
+            <CalculadoraPresupuesto client:load />
+          </div>
+
+          <!-- Columna Derecha: Formulario de Contacto -->
+          <div>
+            <h3
+              class="text-xl font-bold text-white mb-6 uppercase tracking-wider"
+            >
+              MANTENTE EN CONTACTO
+            </h3>
+            <FormularioContacto client:load />
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </LayoutPrincipal>

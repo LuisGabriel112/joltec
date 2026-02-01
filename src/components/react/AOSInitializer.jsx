@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function AOSInitializer({ children }) {
+export default function AOSInitializer() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,5 +22,5 @@ export default function AOSInitializer({ children }) {
     };
   }, []);
 
-  return <>{children}</>;
+  return null;
 }
